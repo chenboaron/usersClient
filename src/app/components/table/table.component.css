@@ -1,0 +1,21 @@
+table {
+  min-width: 60%;
+  width: 80% !important;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.warn {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.warn:hover {
+  cursor: pointer;
+}
+
+.action {
+  display: inline-flex;
+  height: 52px;
+}

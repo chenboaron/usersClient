@@ -1,0 +1,26 @@
+<div class="allPage">
+  <p>
+    Users App
+  </p>
+
+  <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+    <a mat-tab-link routerLink="/addUser" routerLinkActive
+      #addUserTab="routerLinkActive" [active]="addUserTab.isActive">
+      Add User
+    </a>
+    <ab mat-tab-link routerLink="/table" routerLinkActive
+      #tableTab="routerLinkActive" [active]="tableTab.isActive">All Users</ab>
+
+    <a mat-tab-link routerLink="/map" routerLinkActive
+      #mapTab="routerLinkActive" [active]="mapTab.isActive">Map</a>
+
+  </nav>
+
+
+
+  <mat-tab-nav-panel #tabPanel>
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
+
+
+</div>

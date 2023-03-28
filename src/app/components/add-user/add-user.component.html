@@ -1,0 +1,76 @@
+
+<form class="allPage" action="" #addUserForm="ngForm" [formGroup]="userFrom"
+  (submit)="submit()">
+  <P>Add User</P>
+
+  <div class="allInputs">
+    <div class="rightSide">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Full Name</mat-label>
+        <input matInput [formControl]="fullName">
+      </mat-form-field>
+      <span class="error" *ngIf="fullName.errors?.required && fullName.touched">Invalid Full
+        Name</span>
+      <span class="error" *ngIf="fullName.errors?.pattern && fullName.touched">Full Name
+        must be capitalized</span>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput [formControl]="email">
+      </mat-form-field>
+      <span class="error" *ngIf="email.errors?.required && email.touched">Invalid Full
+        Email</span>
+      <span class="error" *ngIf="email.errors?.pattern && email.touched">Email
+        must be capitalized</span>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput [formControl]="address">
+      </mat-form-field>
+      <span class="error" *ngIf="address.errors?.required && address.touched">Invalid Full
+        Address</span>
+      <span class="error" *ngIf="address.errors?.pattern && address.touched">Address
+        must be capitalized</span>
+
+    </div>
+
+    <div class="leftSide">
+
+      <mat-form-field appearance="fill">
+        <mat-label>ACL</mat-label>
+        <mat-select [formControl]="acl">
+          <mat-option value="administrator">Administrator</mat-option>
+          <mat-option value="employee">Employee</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <span class="error" *ngIf="acl.errors?.required && acl.touched">Invalid Full ACL</span>
+
+      <mat-label>Home Location</mat-label>
+      <mat-form-field appearance="fill">
+        <mat-label>Lat</mat-label>
+        <input type="number" matInput [formControl]="lat">
+      </mat-form-field>
+      <span class="error" *ngIf="lat.errors?.required && lat.touched">Invalid Full
+        Lat</span>
+      <span class="error" *ngIf="lat.errors?.pattern && lat.touched">Lat
+        must be capitalized</span>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Lon</mat-label>
+        <input type="number" matInput [formControl]="lon">
+      </mat-form-field>
+      <span  class="error"*ngIf="lon.errors?.required && lon.touched">Invalid Full
+        Lon</span>
+      <span class="error" *ngIf="lon.errors?.pattern && lon.touched">Lon
+        must be capitalized</span>
+
+    </div>
+  </div>
+
+  <button class="SubmitButton" mat-raised-button
+    [disabled]="addUserForm.form.invalid" color="primary">
+    <span *ngIf="!this.usersService.isEditMode">Add User</span>
+    <span *ngIf="this.usersService.isEditMode">Update User</span>
+  </button>
+</form>

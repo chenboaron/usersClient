@@ -1,0 +1,46 @@
+.allPage {
+  height: 40%;
+  width: 40%;
+  justify-content: center;
+  margin: auto;
+  margin-top: 100px;
+}
+
+
+p {
+  color: blue;
+  font-size: large;
+  text-align: center;
+}
+
+.allInputs{
+  display: flex;
+  justify-content: space-around;
+}
+
+.leftSide{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rightSide{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.SubmitButton{
+  position: relative;
+  left: 43%;
+}x
+
+.error{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  color: red;
+}
+
+
+
+

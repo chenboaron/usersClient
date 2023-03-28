@@ -1,0 +1,13 @@
+
+<agm-map [latitude]="lat" [longitude]="lng" [zoom]="6">
+  <agm-marker
+    *ngFor="let user of usersService.allUsers; let i= index"
+    [latitude]="user.lat"
+    [longitude]="user.lon">
+    <agm-info-window>
+      <strong>{{user.fullName}}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+
+</agm-map>
